@@ -10,11 +10,50 @@
   display: flex;
   width: 80vw;
   flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.questions-section input {
+  width: 60px;
 }
 
 .question {
-  display: flex;
-  flex-grow: 2;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(5, 1fr);
   justify-content: space-evenly;
   margin: 1em;
+  font-size: 1.5em;
+  justify-items: center;
+  align-items: center;
+}
+
+#answer-button {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #ffffff;
+  margin: 1em;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  text-align: center;
+  transition: all 0.2s;
+  background-color: var(--primaryColor);
+  font-size: 1.1em;
+}
+
+#answer-button:hover {
+  color: #000000;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+@media all and (max-width: 30em) {
+   #answer-button {
+    display: block;
+    margin: 0.4em auto;
+  }
 }
