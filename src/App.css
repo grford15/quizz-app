@@ -5,12 +5,11 @@
 }
 
 :root {
-  --primaryColor: #af9a7d;
+  --primaryColor: #fca311;
   --mainWhite: #fff;
-  --offWhite: #f7f7f7;
+  --offWhite: #e5e5e5;
   --mainBlack: #222;
-  --mainGrey: #ececec;
-  --darkGrey: #cfcfcf;
+  --blue: #14213d;
   --mainTransition: all 0.3s linear;
   --mainSpacing: 3px;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
@@ -20,6 +19,7 @@
 body {
   font-family: 'Montserrat', sans-serif;
   line-height: 1.4;
+  background-color: var(--primaryColor);
 }
 
 h2 {
