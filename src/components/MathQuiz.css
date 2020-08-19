@@ -15,6 +15,20 @@
 
 .questions-section input {
   width: 60px;
+  background-color: var(--primaryColor);
+  font-size: 1em;
+  border: none;
+  font-family: var(--displayFont);
+  box-shadow: var(--mainBlack) 0px 2px;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  margin: 0;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .question {
