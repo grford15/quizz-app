@@ -28,17 +28,21 @@
   align-items: center;
 }
 
+.answer-section {
+  text-align: center;
+}
+
 #answer-button {
   display: inline-block;
   padding: 0.35em 1.2em;
-  border: 0.1em solid #ffffff;
+  border: 0.1em solid var(--mainBlack);
   margin: 1em;
   border-radius: 0.12em;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--bodyFont);
   font-weight: 300;
-  color: #ffffff;
+  color: var(--mainBlack);
   text-align: center;
   transition: all 0.2s;
   background-color: var(--primaryColor);
@@ -46,8 +50,8 @@
 }
 
 #answer-button:hover {
-  color: #000000;
-  background-color: #ffffff;
+  color: var(--mainWhite);
+  background-color: var(--mainBlack);
   cursor: pointer;
 }
 
@@ -56,4 +60,41 @@
     display: block;
     margin: 0.4em auto;
   }
+}
+
+#refresh-button {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid var(--mainWhite);
+  margin: 1em;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: var(--bodyFont);
+  font-weight: 300;
+  color: var(--mainWhite);
+  text-align: center;
+  transition: all 0.2s;
+  background-color: var(--primaryColor);
+  font-size: 1.1em;
+}
+
+#refresh-button:hover {
+  color: var(--mainBlack);
+  background-color: var(--mainWhite);
+  cursor: pointer;
+}
+
+@media all and (max-width: 30em) {
+   #refresh-button {
+    display: block;
+    margin: 0.4em auto;
+  }
+}
+
+#result {
+  font-family: var(--displayFont);
+  font-size: 2em;
+  margin-top: 1em;
+  text-shadow: #ffffffc2 0px 0px 4px;
 }

@@ -14,10 +14,12 @@
   --mainSpacing: 3px;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  --bodyFont: 'Montserrat', sans-serif;
+  --displayFont: 'Kalam', cursive;
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--bodyFont);
   line-height: 1.4;
   background-color: var(--primaryColor);
 }
@@ -25,5 +27,5 @@ body {
 h2 {
   font-size: 2em;
   margin-bottom: 0.75em;
-  font-family: 'Kalam', cursive;
+  font-family: var(--displayFont);
 }

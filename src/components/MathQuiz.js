@@ -9,9 +9,20 @@ class MathQuiz extends React.Component {
   answerQuestions = (e) => {
     e.preventDefault();
     console.log('Click !');
+    this.setState({
+      answered: true,
+    });
+  };
+
+  refreshQuestions = (e) => {
+    e.preventDefault();
+    this.setState({
+      answered: false,
+    });
   };
 
   render() {
+    const { answered } = this.state;
     return (
       <div className="math-container">
         <h2>Math Questions</h2>
@@ -42,6 +53,10 @@ class MathQuiz extends React.Component {
           <button onClick={this.answerQuestions} id="answer-button">
             Check Your Answers
           </button>
+          <button onClick={this.refreshQuestions} id="refresh-button">
+            Refresh Questions
+          </button>
+          {answered && <h4 id="result">You got 0 right !</h4>}
         </div>
       </div>
     );
