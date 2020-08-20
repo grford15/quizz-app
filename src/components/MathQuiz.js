@@ -2,9 +2,16 @@ import React from 'react';
 import './MathQuiz.css';
 
 class MathQuiz extends React.Component {
-  state = {
-    answered: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      answered: false,
+    };
+
+    this.answerQuestions = this.answerQuestions.bind(this);
+    this.refreshQuestions = this.refreshQuestions.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
 
   answerQuestions = (e) => {
     e.preventDefault();
@@ -21,36 +28,64 @@ class MathQuiz extends React.Component {
     });
   };
 
+  handleChange(e) {
+    const target = e.target;
+    const name = target.name;
+    const value = target.value;
+    console.log(name);
+    this.setState({
+      [name]: value,
+    });
+  }
+
   render() {
     const { answered } = this.state;
     return (
       <div className="math-container">
         <h2>Math Questions</h2>
         <div className="questions-section">
-          <div className="question">
-            <p>10</p>
-            <p>+</p>
-            <input type="number" />
-            <p>=</p>
-            <p>20</p>
-          </div>
-          <div className="question">
-            <p>5</p>
-            <p>x</p>
-            <input type="number" />
-            <p>=</p>
-            <p>20</p>
-          </div>
-          <div className="question">
-            <p>18</p>
-            <p>-</p>
-            <input type="number" />
-            <p>=</p>
-            <p>9</p>
-          </div>
+          <form onSubmit={this.answerQuestions}>
+            <div className="question">
+              <span>10</span>
+              <span>+</span>
+              <input
+                type="number"
+                name="question1"
+                onChange={this.handleChange}
+              />
+              <span>=</span>
+              <span>20</span>
+            </div>
+            <div className="question">
+              <span>10</span>
+              <span>+</span>
+              <input
+                type="number"
+                name="question2"
+                onChange={this.handleChange}
+              />
+              <span>=</span>
+              <span>20</span>
+            </div>
+            <div className="question">
+              <span>10</span>
+              <span>+</span>
+              <input
+                type="number"
+                name="question3"
+                onChange={this.handleChange}
+              />
+              <span>=</span>
+              <span>20</span>
+            </div>
+          </form>
         </div>
         <div className="answer-section">
-          <button onClick={this.answerQuestions} id="answer-button">
+          <button
+            type="submit"
+            onClick={this.answerQuestions}
+            id="answer-button"
+          >
             Check Your Answers
           </button>
           <button onClick={this.refreshQuestions} id="refresh-button">
