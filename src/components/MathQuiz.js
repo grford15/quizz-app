@@ -45,39 +45,21 @@ class MathQuiz extends React.Component {
         <h2>Math Questions</h2>
         <div className="questions-section">
           <form onSubmit={this.answerQuestions}>
-            <div className="question">
-              <span>10</span>
-              <span>+</span>
-              <input
-                type="number"
-                name="question1"
-                onChange={this.handleChange}
-              />
-              <span>=</span>
-              <span>20</span>
-            </div>
-            <div className="question">
-              <span>10</span>
-              <span>+</span>
-              <input
-                type="number"
-                name="question2"
-                onChange={this.handleChange}
-              />
-              <span>=</span>
-              <span>20</span>
-            </div>
-            <div className="question">
-              <span>10</span>
-              <span>+</span>
-              <input
-                type="number"
-                name="question3"
-                onChange={this.handleChange}
-              />
-              <span>=</span>
-              <span>20</span>
-            </div>
+            {mathQuestions.map((question, index) => {
+              return (
+                <div className="question" key={index}>
+                  <span>{question.num1}</span>
+                  <span>+</span>
+                  <span>{question.num2}</span>
+                  <span>=</span>
+                  <input
+                    type="number"
+                    name={'question' + index}
+                    onChange={this.handleChange}
+                  />
+                </div>
+              );
+            })}
           </form>
         </div>
         <div className="answer-section">
@@ -97,5 +79,48 @@ class MathQuiz extends React.Component {
     );
   }
 }
+
+const mathQuestions = [
+  {
+    num1: 10,
+    num2: 2,
+  },
+  {
+    num1: 11,
+    num2: 6,
+  },
+  {
+    num1: 16,
+    num2: 9,
+  },
+  {
+    num1: 11,
+    num2: 5,
+  },
+  {
+    num1: 4,
+    num2: 10,
+  },
+  {
+    num1: 21,
+    num2: 7,
+  },
+  {
+    num1: 18,
+    num2: 3,
+  },
+  {
+    num1: 11,
+    num2: 5,
+  },
+  {
+    num1: 6,
+    num2: 7,
+  },
+  {
+    num1: 13,
+    num2: 15,
+  },
+];
 
 export default MathQuiz;
